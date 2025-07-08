@@ -1,0 +1,623 @@
+/* --- Importation des Polices Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* --- Variables CSS (Couleurs Modernes) --- */
+:root {
+    --primary-color: #5A67D8; /* Un bleu-violet moderne */
+    --secondary-color: #6B7280; /* Gris foncé doux */
+    --accent-color: #81E6D9; /* Un vert menthe/turquoise comme accent */
+    --dark-bg: #1A202C; /* Arrière-plan très sombre pour contraste */
+    --light-bg: #F7FAFC; /* Arrière-plan très clair */
+    --card-bg: #FFFFFF; /* Fond des cartes/éléments clairs */
+    --text-color: #2D3748; /* Texte principal sombre */
+    --white-text: #FFFFFF; /* Texte blanc sur fonds sombres */
+    --border-color: #E2E8F0; /* Bordure subtile */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Styles Généraux & Réinitialisation --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Police de texte plus lisible */
+    line-height: 1.7; /* Espacement des lignes amélioré */
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Police de titres plus impactante */
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+section {
+    padding: 6rem 0; /* Plus de padding pour un look aéré */
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    padding: 1rem 2.2rem;
+    border-radius: 8px; /* Bords légèrement plus arrondis */
+    margin-top: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em; /* Léger espacement des lettres */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: var(--shadow-light);
+}
+
+.button:hover {
+    background-color: #434B9C; /* Teinte plus foncée au survol */
+    transform: translateY(-3px); /* Petit effet de soulèvement */
+    box-shadow: var(--shadow-medium);
+}
+
+/* --- EN-TÊTE / NAVIGATION --- */
+header {
+    background-color: var(--dark-bg);
+    color: var(--white-text);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-medium);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+header .logo {
+    color: var(--white-text);
+    margin: 0;
+    font-size: 2rem; /* Logo plus grand */
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 35px; /* Plus d'espace entre les liens */
+}
+
+header nav ul li a {
+    color: var(--white-text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative; /* Pour l'effet de soulignement */
+}
+
+header nav ul li a::after { /* Effet de soulignement moderne */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-out;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Styles pour le bouton hamburger (mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    padding: 5px; /* Zone de clic plus grande */
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background-color: var(--white-text);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Animation du hamburger en croix */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* --- SECTION : ACCUEIL / HERO --- */
+.hero {
+    /* Remplacez 'images/fond-hero.jpg' par le chemin de votre image de fond réelle */
+    background: linear-gradient(rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.8)), url('images/fond-hero.jpg') no-repeat center center/cover;
+    color: var(--white-text);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+    animation: fadeIn 1s ease-out; /* Animation d'apparition */
+}
+
+.hero-content h2 {
+    font-size: 4rem; /* Titre plus grand */
+    margin-bottom: 0.8rem;
+    color: var(--white-text);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.hero-content h3 {
+    font-size: 2.2rem;
+    color: var(--accent-color); /* Couleur d'accent pour le sous-titre */
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 1.5rem auto 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- SECTION : À PROPOS --- */
+.about {
+    background-color: var(--card-bg); /* Fond blanc pour cette section */
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block; /* Pour l'effet de soulignement */
+}
+
+.about h2::after { /* Soulignement décoratif */
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.about p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border: 6px solid var(--accent-color); /* Bordure colorée */
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+/* --- SECTION : PROJETS --- */
+.projects {
+    background-color: var(--light-bg);
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.projects h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.project-item {
+    background-color: var(--card-bg);
+    border-radius: 12px; /* Bords plus arrondis */
+    box-shadow: var(--shadow-light);
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Pour que l'ombre ne déborde pas */
+}
+
+.project-item:hover {
+    transform: translateY(-8px); /* Effet de soulèvement plus prononcé */
+    box-shadow: var(--shadow-medium);
+}
+
+.project-item img {
+    max-width: 100%;
+    height: 220px; /* Hauteur fixe des images de projet */
+    object-fit: cover;
+    border-radius: 8px; /* Bords arrondis pour les images */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-item h3 {
+    font-size: 2rem; /* Titre de projet plus grand */
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.project-item p {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    flex-grow: 1;
+    color: var(--secondary-color);
+}
+
+.project-item .technologies {
+    font-style: normal; /* Pas d'italique */
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.project-item .project-link {
+    display: inline-block;
+    margin-right: 18px;
+    margin-top: 15px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-item .project-link:last-child {
+    margin-right: 0;
+    background-color: transparent; /* Bouton "Code Source" transparent */
+    color: var(--primary-color);
+}
+
+.project-item .project-link:hover {
+    background-color: var(--white-text);
+    color: var(--primary-color);
+    border-color: var(--accent-color); /* Changement de bordure au survol */
+}
+
+.project-item .project-link:last-child:hover {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+}
+
+/* --- SECTION : COMPÉTENCES --- */
+.skills {
+    background-color: var(--dark-bg);
+    color: var(--white-text);
+}
+
+.skills h2 {
+    color: var(--white-text);
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.skills h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--accent-color); /* Accent sur le soulignement des compétences */
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Plus d'espace entre les compétences */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-list li {
+    background-color: var(--primary-color);
+    color: var(--white-text);
+    padding: 12px 25px;
+    border-radius: 25px; /* Puces plus rondes */
+    font-weight: 600;
+    font-size: 1.15rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color); /* Changement de couleur au survol */
+}
+
+/* --- SECTION : CONTACT --- */
+.contact {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.contact p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--secondary-color);
+}
+
+.contact-info a {
+    display: inline-block; /* Les liens sont côte à côte */
+    margin: 0 15px 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 2px solid transparent; /* Effet de soulignement au survol */
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* --- PIED DE PAGE --- */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- Bouton Retour en haut de page --- */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent-color); /* Couleur d'accent pour le bouton */
+    color: var(--dark-bg); /* Texte sombre sur bouton clair */
+    cursor: pointer;
+    padding: 18px 22px;
+    border-radius: 50%;
+    font-size: 20px; /* Plus grand */
+    box-shadow: var(--shadow-medium);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#backToTopBtn:hover {
+    background-color: #6EE7B7; /* Teinte plus claire au survol */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+/* --- MEDIA QUERIES (Responsive Design Amélioré) --- */
+@media (max-width: 992px) {
+    .hero-content h2 {
+        font-size: 3.5rem;
+    }
+    .hero-content h3 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .project-item img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-bg);
+        position: absolute;
+        top: 70px; /* En dessous de l'en-tête */
+        left: 0;
+        padding: 15px 0;
+        box-shadow: var(--shadow-medium);
+        text-align: center;
+    }
+
+    header nav .nav-links.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 12px 0;
+    }
+
+    .hamburger {
+        display: flex; /* Affiche le bouton hamburger */
+    }
+
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .about p, .contact p {
+        font-size: 1.05rem;
+    }
+
+    .project-item {
+        padding: 25px;
+    }
+
+    .project-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .project-item img {
+        height: 160px;
+    }
+
+    .skills-list li {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    #backToTopBtn {
+        bottom: 25px;
+        right: 25px;
+        padding: 15px 18px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 1.8rem;
+    }
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    .hero-content h3 {
+        font-size: 1.1rem;
+    }
+    .button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .project-item h3 {
+        font-size: 1.4rem;
+    }
+    .project-item img {
+        height: 140px;
+    }
+    .project-item .project-link {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    .contact-info a {
+        font-size: 1rem;
+    }
+}
