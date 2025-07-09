@@ -248,7 +248,7 @@ header nav ul li a.active {
  
  background-image:url("images/fallou.jpg");
       color: var(--white-text);
-    min-height: 1000px; /* Utilise au moins 100% de la hauteur visible */
+    min-height: 1100px; /* Utilise au moins 100% de la hauteur visible */
     display: flex;
     justify-content: center;
     align-items: center;
