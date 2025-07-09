@@ -3,7 +3,6 @@
 
 /* --- Variables CSS (Couleurs Ultra Magnifiques) --- */
 :root {
-
     --primary-color: #6C63FF; /* Violet Profond, impactant */
     --secondary-color: #3f51b5; /* Bleu-Violet plus doux */
     --accent-color: #00BCD4; /* Cyan Éclatant pour les accents */
@@ -30,7 +29,6 @@
 }
 
 body {
-    
     font-family: 'Lato', sans-serif; /* Police de texte plus douce */
     line-height: 1.8; /* Espacement des lignes généreux */
     color: var(--text-color);
@@ -147,7 +145,6 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow-lg);
-   
 }
 
 header .logo {
@@ -245,24 +242,23 @@ header nav ul li a.active {
 
 /* --- SECTION : ACCUEIL / HERO --- */
 .hero {
- 
- background-image:url("images/fallou.jpg");
-      color: var(--white-text);
-    min-height: 1100px; /* Utilise au moins 100% de la hauteur visible */
+    background:  url('images/abdou.jpg')  no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh;
+    background-position: center 17%;
+    color: var(--black-text);
+    min-height: 900px; /* Utilise au moins 100% de la hauteur visible */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0; /* Réinitialiser le padding pour un plein écran */
-    background-size: cover; /* Couvre toute la section */
- 
-}
+    padding: 90px; /* Réinitialiser le padding pour un plein écran */
+    text-align: center;
+  
+    }
+        
+    
 
 
-img {
- 
- text-align: center;
- width: 500px;
-}
 .hero-content {
     max-width: 900px;
     margin: 0 auto;
