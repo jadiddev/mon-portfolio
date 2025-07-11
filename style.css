@@ -247,7 +247,7 @@ header nav ul li a.active {
     height: 100vh;
     background-position: center 17%;
     color: var(--black-text);
-    min-height: 900px; /* Utilise au moins 100% de la hauteur visible */
+    min-height: 800px; /* Utilise au moins 100% de la hauteur visible */
     display: flex;
     justify-content: center;
     align-items: center;
